@@ -107,6 +107,11 @@ echo "2. Running user configuration as 'rbbt'"
 chown rbbt $user_script;
 su -l -c "bash $user_script" rbbt
 
+# CLEAN-UP
+
+RUN apt-get clean
+RUN rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
 # DONE
 echo
 echo "Installation done."
